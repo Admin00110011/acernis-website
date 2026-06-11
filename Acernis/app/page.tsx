@@ -53,8 +53,8 @@ function InvestorCard({ name, role, photo, quote }: typeof INVESTORS[0]) {
 }
 
 const LOGOS_OPERATORS = [
-  { src: "/Vodafone_logo_grey.png",      alt: "Vodafone",        w: 140, h: 60 },
-  { src: "/VirginMediaO2_logo_grey.png", alt: "Virgin Media O2", w: 140, h: 60 },
+  { src: "/Vodafone_logo_grey.png",      alt: "Vodafone",        w: 110, h: 48 },
+  { src: "/VirginMediaO2_logo_grey.png", alt: "Virgin Media O2", w: 110, h: 48 },
 ];
 
 const LOGOS_ECOSYSTEM = [
@@ -407,7 +407,7 @@ export default function HomePage() {
       <section style={{ backgroundColor: "#F8FAF8", borderTop: "1px solid #E5E7EB" }}>
         {/* Operators */}
         <div className="px-6 py-14" style={{ borderBottom: "1px solid #E5E7EB" }}>
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-xl mx-auto text-center">
             <p className="text-xs font-semibold uppercase tracking-widest mb-10" style={{ color: "#9CA3AF" }}>
               Trusted by Europe's Leading Operators
             </p>
