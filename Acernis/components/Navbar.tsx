@@ -17,7 +17,7 @@ export default function Navbar() {
   const { t } = useLanguage();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [announcementVisible, setAnnouncementVisible] = useState(true);
+  const [announcementVisible, setAnnouncementVisible] = useState(false);
 
   const links = [
     { href: "/about", label: t.nav.about },
