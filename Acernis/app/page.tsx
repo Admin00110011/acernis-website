@@ -246,6 +246,15 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
+    const v = bgVideoRef.current;
+    if (!v) return;
+    const unlock = () => {
+      v.play().then(() => { v.pause(); v.currentTime = 0.001; }).catch(() => { v.currentTime = 0.001; });
+    };
+    if (v.readyState >= 1) { unlock(); } else { v.addEventListener("loadedmetadata", unlock, { once: true }); }
+  }, []);
+
+  useEffect(() => {
     let targetTime = 0;
     let ticking = false;
 
@@ -301,14 +310,7 @@ export default function HomePage() {
             poster="/Pictire_Backup%20Start%20Screen.png"
             muted
             playsInline
-            autoPlay
             preload="auto"
-            onPlay={(e) => { e.currentTarget.pause(); }}
-            onLoadedMetadata={() => {
-              const v = bgVideoRef.current;
-              if (!v) return;
-              v.play().catch(() => { v.currentTime = 0.001; });
-            }}
             style={{
               position: "absolute",
               inset: 0,
